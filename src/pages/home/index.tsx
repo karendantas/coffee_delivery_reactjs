@@ -1,11 +1,16 @@
-import { HomeContainer, 
-        InfosContainer,
-        InfoTextContent,
-        InfoItems,
-        CircleItem,
-    } from './styles';
+import {HomeContainer,
+    IntroContainer, 
+    InfosContainer,
+    InfoTextContent,
+    InfoItems,
+    CircleItem,
+    ProductsContainer,
+    ProductsContent,
+} from './styles';
 
 import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react';
+
+import { Card } from '../../components/card';
 
 const HomeImg = 'src/assets/HomeImage.png';
 
@@ -13,6 +18,7 @@ export function Home(){
     return (
        <HomeContainer>
 
+        <IntroContainer> 
             <InfosContainer>
                 <InfoTextContent>
                     <h1> Encontre o café perfeito para qualquer hora do dia </h1>
@@ -62,6 +68,15 @@ export function Home(){
             <div>
                 <img src= {HomeImg}alt="" />
             </div>
+        </IntroContainer>
+
+
+        <ProductsContainer>
+            <h1>Nossos cafés</h1>
+            <ProductsContent>
+                <Card />
+            </ProductsContent>
+        </ProductsContainer>
 
        </HomeContainer>
     )

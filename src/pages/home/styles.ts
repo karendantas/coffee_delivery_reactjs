@@ -2,13 +2,18 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
     width: 100%;
-    min-height: 34rem ;
+    height: 100vh;
 
+    display: flex;
+    flex-direction: column;
+
+`;
+export const IntroContainer = styled.div`
+    min-height: 34rem ;
     display:flex;
     justify-content: center;
     align-items: center;
     gap: 3.5rem;
-
 `;
 export const InfosContainer = styled.div`
     width: 36.875rem;
@@ -16,7 +21,7 @@ export const InfosContainer = styled.div`
     display:flex;
     flex-direction: column;
     gap: 4.125rem;
-`
+`;
 export const InfoTextContent = styled.div`
 
     h1{
@@ -31,7 +36,6 @@ export const InfoTextContent = styled.div`
         color: ${props => props.theme['base-subtitle']}
     }
 `;
-
 export const InfoItems = styled.div`
   display: flex;
   gap: 3.5rem;
@@ -47,8 +51,7 @@ export const InfoItems = styled.div`
     gap:0.34375rem;
   }
 
-`
-
+`;
 interface CicleItemProps {
     itemNumber: number
 }
@@ -69,5 +72,19 @@ export const CircleItem = styled.div<CicleItemProps>`
         props => props.itemNumber === 4 && props.theme['purple-dark']
 
         };
-    color: ${props => props.theme['white']}
-`
+    color: ${props => props.theme['white']};
+`;
+
+/*Products styles */
+
+export const ProductsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap:3.375rem;
+`;
+export const ProductsContent = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+`;
