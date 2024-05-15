@@ -75,6 +75,15 @@ export function Home(){
             <h1>Nossos cafés</h1>
             <ProductsContent>
                 <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
             </ProductsContent>
         </ProductsContainer>
 

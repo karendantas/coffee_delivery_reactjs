@@ -12,6 +12,8 @@ export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    margin-bottom: 2.5rem;
 `;
 
 export const ProductContent =  styled.div`

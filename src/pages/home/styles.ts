@@ -25,6 +25,7 @@ export const InfosContainer = styled.div`
 export const InfoTextContent = styled.div`
 
     h1{
+        width: 100%;
         font-size: 3rem;
         font-weight: bolder;
         margin-bottom: 1rem;
@@ -33,6 +34,7 @@ export const InfoTextContent = styled.div`
     }
     p{
         font-size: 1.25rem;
+        width: 90%;
         color: ${props => props.theme['base-subtitle']}
     }
 `;
@@ -81,10 +83,13 @@ export const ProductsContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap:3.375rem;
+
+    padding: 2rem 3rem;
 `;
 export const ProductsContent = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
     flex-wrap: wrap;
 `;
