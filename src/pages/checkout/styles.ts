@@ -6,27 +6,29 @@ export const CheckoutContainer = styled.div`
 
     display: grid;
     grid-template-columns: 640px 1fr;
-
-
 `;
 
-export const FormContainer = styled.div`
-    
-    
-    & .address-form{
-        width: 100%;
-        flex: 1;
-        margin-top: 0.9375rem;
+const BaseFormContainer = styled.div`
+    width: 100%;
+    flex: 1;
+    margin-top: 0.9375rem;
 
-        background-color: ${props => props.theme['base-card']};
+    background-color: ${props => props.theme['base-card']};
+    border-radius: 6px;
 
-        padding: 2.5rem;
+    padding: 2.5rem;
 
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
 
-    }
+`
 
+export const InfosCotainer = styled.div`
+    margin-bottom: 2rem;
+`;
+export const AddressFormContainer = styled(BaseFormContainer)`
+`;
 
-
+export const PaymentFormContainer = styled(BaseFormContainer)`
 `;
