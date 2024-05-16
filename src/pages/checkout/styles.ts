@@ -4,8 +4,13 @@ export const CheckoutContainer = styled.div`
     width: 100%;
     height: 100vh;
 
-    display: grid;
-    grid-template-columns: 640px 1fr;
+    form{
+        display: grid;
+        grid-template-columns: 640px 1fr;
+        gap: 2rem;
+        
+        justify-content: center;
+    }
 `;
 
 const BaseFormContainer = styled.div`
