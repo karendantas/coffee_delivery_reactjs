@@ -6,25 +6,29 @@ import {CardContainer,
         ProductContent,
     
         } from './styles';
+import { ProductType } from '../../pages/home';
 
 
-export function Card (){
+interface CardProps {
+    data: ProductType
+}
+export function Card ({data}: CardProps){
     return (
         <CardContainer> 
             <ProductContent> 
 
-                <img src="src/assets/products/expresso.png" alt="" />
+                <img src={data.image} alt="" />
                 <ProductTagContainer>
-                    <div>TRADICIONAL</div>
+                    <div>{data.tags}</div>
                 </ProductTagContainer>
 
-                <h3>Expresso tradicional</h3>
-                <p>O tradicional café feito com água quente e grãos moídos</p>
+                <h3>{data.title}</h3>
+                <p> {data.description} </p>
             </ProductContent>
 
             <ProductBuyContainer>
                 <div className = "price" >
-                    <span>R$  <strong>9,90</strong> </span>
+                    <span>R$  <strong>{data.price}</strong> </span>
                 </div>
 
                 <div className = "add-to-cart" > 

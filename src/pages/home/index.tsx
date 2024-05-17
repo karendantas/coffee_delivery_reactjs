@@ -12,12 +12,24 @@ import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react';
 
 import { Card } from '../../components/card';
 
-const HomeImg = 'src/assets/HomeImage.png';
+const HomeImg = 'HomeImage.png';
+
+import {coffees} from '../../../data.json';
+
+export type ProductType = {
+    id: string,
+    title: string,
+    description: string,
+    price: number,
+    tags: string[],
+    image: string,
+}
 
 export function Home(){
+    
+
     return (
        <HomeContainer>
-
         <IntroContainer> 
             <InfosContainer>
                 <InfoTextContent>
@@ -73,7 +85,15 @@ export function Home(){
         <ProductsContainer>
             <h1>Nossos cafés</h1>
             <ProductsContent>
-                <Card />
+                { coffees.map((coffee) => {
+                    return ( 
+                        <Card 
+                            key = {coffee.id} 
+                            data={coffee}
+                        
+                        />
+                    )
+                })}
             </ProductsContent>
         </ProductsContainer>
 

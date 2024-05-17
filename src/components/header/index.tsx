@@ -5,7 +5,7 @@ import{ HeaderContainer,
         MarketCartContent, 
     } from './styles';
 
-const LogoImg = 'src/assets/Logo.png'
+const LogoImg = '/Logo.png'
 
 interface HeaderProps {
     cartQuantity: number;
