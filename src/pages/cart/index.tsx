@@ -1,15 +1,15 @@
-import { AddressForm, PaymentForm } from '../../components/form';
-import { ProductCart } from '../../components/ProductCart';
+import { AddressForm, PaymentForm } from './components/form';
 
 import { AddressFormContainer, 
-        CheckoutContainer, 
+        CartContainer, 
         InfosCotainer,
-        PaymentFormContainer } from './styles';
+        PaymentFormContainer, 
+        ProductCart} from './styles';
 
-export function Checkout(){
+export function Cart(){
     return (
         
-        <CheckoutContainer>
+        <CartContainer>
             <form> 
                 <div>
                     <h2>Complete seu pedido </h2>
@@ -37,10 +37,10 @@ export function Checkout(){
                 <div>
                     <h2>Cafés selecionados </h2>
                     <ProductCart> 
-                        
+                        oi
                     </ProductCart>
                 </div>
             </form>
-        </CheckoutContainer>
+        </CartContainer>
     )
 }

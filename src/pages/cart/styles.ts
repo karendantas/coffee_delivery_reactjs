@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CheckoutContainer = styled.div`
+export const CartContainer = styled.div`
     width: 100%;
     height: 100vh;
 
@@ -36,4 +36,9 @@ export const AddressFormContainer = styled(BaseFormContainer)`
 `;
 
 export const PaymentFormContainer = styled(BaseFormContainer)`
+`;
+
+export const ProductCart = styled.div`
+
+
 `;
