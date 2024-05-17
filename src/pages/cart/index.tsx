@@ -16,12 +16,13 @@ import * as z from 'zod';
 
 const createNewOrderSchema = z.object({
     zipcode: z.string().min(1, 'Informe seu cep'),
-    street: z.string().min(1),
-    number: z.number().min(1),
+    street: z.string().min(1, 'Informe sua rua'),
+    number: z.number({message: 'Informe um número'}).min(1, 'Informe seu número'),
     complement: z.string(),
-    neighborhood: z.string().min(1),
-    city: z.string(),
-    uf: z.string().min(1)
+    neighborhood: z.string().min(1, 'Informe seu bairro'),
+    city: z.string().min(1, 'Informe sua cidade'),
+    uf: z.string().min(1, ''),
+    pay: z.string()
    }); 
 
 export type createNewOrderData = z.infer<typeof createNewOrderSchema>

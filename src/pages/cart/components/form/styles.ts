@@ -4,8 +4,8 @@ import * as RadioGroup from '@radix-ui/react-radio-group'
 export const FormContent = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     border-radius: 6px;
+    gap: 1rem;
 `;
 
 interface InputProps {
@@ -24,8 +24,6 @@ export const BaseInput = styled.input<InputProps>`
 
     `
 
-export const FormGroup = styled.div`
-`
 interface InlineInputsProps{
     columns: number;
 }

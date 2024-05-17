@@ -50,12 +50,13 @@ export const LocalizationContainer = styled.div`
 
 `
 
-export const MarketCartContent = styled.div`
+export const MarketCartContent = styled.a`
     background-color: ${ props => props.theme['yellow-light']};
     color: ${props => props.theme['yellow-dark']};
+    
+    line-height: 0;
 
     border-radius: 6px;
-
     padding: 8px;
 
 `

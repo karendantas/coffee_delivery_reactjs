@@ -13,7 +13,7 @@ interface HeaderProps {
 export function Header ({ cartQuantity =2 }:HeaderProps){
     return (
         <HeaderContainer>
-            <img src={LogoImg} alt="Logo com o nome do site e um icone de copo de cafe roxo ao lado" />
+            <a href="/"><img src={LogoImg} alt="Logo com o nome do site e um icone de copo de cafe roxo ao lado" /></a>
 
             <div>
                 <LocalizationContainer> 
@@ -22,7 +22,7 @@ export function Header ({ cartQuantity =2 }:HeaderProps){
 
                
 
-                    <MarketCartContent>
+                    <MarketCartContent href='/cart'>
                         <ShoppingCart size={24} weight='fill'/>
                     </MarketCartContent>
 

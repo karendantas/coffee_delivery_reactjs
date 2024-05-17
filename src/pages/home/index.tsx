@@ -70,7 +70,6 @@ export function Home(){
             </div>
         </IntroContainer>
 
-
         <ProductsContainer>
             <h1>Nossos cafés</h1>
             <ProductsContent>
