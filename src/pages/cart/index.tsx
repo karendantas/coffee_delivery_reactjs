@@ -80,44 +80,6 @@ export function Cart(){
 
                                 <strong>R$ 9.90</strong>
                             </Item>
-                            <Item>
-                                <img src="src/assets/products/expresso.png" alt="" />  
-                                <div>
-                                    <span>Expresso Tradicional</span> 
-                                    <div className = "add-to-cart"> 
-                                        <div className = "content">
-                                            <button> <Minus size={13} weight='bold'/> </button>
-                                                <span> 1 </span>
-                                            <button> <Plus size={13} weight='bold'/> </button>
-                                        </div>
-
-                                        <div className="content">
-                                            <button> <Trash /> <span>REMOVER</span> </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <strong>R$ 9.90</strong>
-                            </Item>
-                            <Item>
-                                <img src="src/assets/products/expresso.png" alt="" />  
-                                <div>
-                                    <span>Expresso Tradicional</span> 
-                                    <div className = "add-to-cart"> 
-                                        <div className = "content">
-                                            <button> <Minus size={13} weight='bold'/> </button>
-                                                <span> 1 </span>
-                                            <button> <Plus size={13} weight='bold'/> </button>
-                                        </div>
-
-                                        <div className="content">
-                                            <button> <Trash /> <span>REMOVER</span> </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <strong>R$ 9.90</strong>
-                            </Item>
                             
                         </ProductsInCartContainer>
 

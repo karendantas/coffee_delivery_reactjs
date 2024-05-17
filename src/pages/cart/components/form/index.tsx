@@ -3,7 +3,8 @@ import {FormContent,
         BaseInput, 
         FormGroup, 
         InlineInputs, 
-        PaymentOptions } from './styles';
+        PaymentOptions, 
+        PaymentOptionButton} from './styles';
 
 export function AddressForm(){
     return (
@@ -50,9 +51,9 @@ export function PaymentForm(){
     return (
         <FormContent>
             <PaymentOptions>
-                <button> <span> <CreditCard size={20} /> </span>  CARTÃO DE CRÉDITO </button>
-                <button> <span> <CreditCard size={20} /> </span>  CARTÃO DE CRÉDITO </button>
-                <button> <span> <CreditCard size={20} /> </span>  CARTÃO DE CRÉDITO </button>
+                <PaymentOptionButton value = "credit"> <span> <CreditCard size={20} /> </span>  CARTÃO DE CRÉDITO </PaymentOptionButton>
+                <PaymentOptionButton value = "debit"> <span> <CreditCard size={20} /> </span>  CARTÃO DE CRÉDITO </PaymentOptionButton>
+                <PaymentOptionButton value = "money"> <span> <CreditCard size={20} /> </span>  CARTÃO DE CRÉDITO </PaymentOptionButton>
             </PaymentOptions>
 
         </FormContent>

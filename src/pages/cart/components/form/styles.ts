@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import * as RadioGroup from '@radix-ui/react-radio-group'
 
 export const FormContent = styled.div`
     display: flex;
@@ -36,23 +36,26 @@ export const InlineInputs = styled.div<InlineInputsProps>`
     gap: 0.75rem;
 `
 
-export const PaymentOptions = styled.div`
+export const PaymentOptions = styled(RadioGroup.Root)`
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+`
+
+export const PaymentOptionButton = styled(RadioGroup.Item)`
+    background-color: ${props => props.theme['base-button']};
+    color:  ${props => props.theme['base-text']};
+    font-size: 0.75rem;
+    border: none;
+    border-radius: 6px;
+
+    border: 1px solid transparent;
+
     display: flex;
     align-items: center;
     gap: 0.75rem;
 
-    button {
-        background-color: ${props => props.theme['base-button']};
-        color:  ${props => props.theme['base-text']};
-        font-size: 0.75rem;
-        border: none;
-        border-radius: 6px;
-
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-
-        padding: 1rem;
+    padding: 1rem;
         
         span{
             color: ${props => props.theme['purple']};
@@ -60,5 +63,14 @@ export const PaymentOptions = styled.div`
             display: flex;
             align-items: center;
         }
-    }
+
+        &[data-state='unchecked']:hover {
+            transition: background-color 0.2s;
+ 
+        }
+        &[data-state='checked'] {
+            background: ${props => props.theme['purple-light']};
+            border: 1px solid ${props => props.theme['purple']};
+        }
+    
 `
