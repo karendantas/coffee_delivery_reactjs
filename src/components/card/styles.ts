@@ -62,7 +62,7 @@ export const ProductBuyContainer = styled.div`
         font-size: 1.5rem;
     }
 
-    & .add-to-cart { 
+    & .add-to-cart{ 
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -93,21 +93,10 @@ export const ProductBuyContainer = styled.div`
         border:none;
         outline: none;
 
-        color: ${props => props.theme['purple']}
+        svg{
+            color: ${props => props.theme['purple']}
+
+        }
     }
-
-    & .cart{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        background-color: ${props => props.theme['purple-dark']};
-        color: ${props => props.theme['base-card']};
-        border-radius: 6px;
-        padding: 0.5rem;
-    }
-
-
-    
 
 `;
