@@ -13,7 +13,7 @@ import { AddressFormContainer,
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ProductContext } from '../../contexts/ProductsContext';
 
 const createNewOrderSchema = z.object({
@@ -44,8 +44,6 @@ export function Cart(){
     }
 
     return (
-
-        
         <CartContainer>
             <form onSubmit={handleSubmit(handleCreateNewOrder)}> 
                 <FormProvider {...newCartForm} > 
@@ -79,7 +77,7 @@ export function Cart(){
                                 {
                                     cart.map ( (product) => {
                                         return (
-                                            <Item>
+                                            <Item key = {product.id}>
                                             <img src= {product.image} alt="" />  
                                                 <div>
                                                     <span>{product.title}</span> 

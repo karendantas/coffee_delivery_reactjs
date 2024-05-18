@@ -1,11 +1,11 @@
-import { createContext, ReactNode, useState } from "react"
+import { createContext, ReactNode, useEffect, useState } from "react"
 import { ProductType } from "../pages/home";
 
 
 interface ProductContextType {
     cart: ProductType[],
-    addItemToCart: (data: ProductType) => void;
-    removeItemFromCart: (productIdToRemove: string) => void;
+    addItemToCart: (data: ProductType) => void,
+    removeItemFromCart: (productIdToRemove: string) => void,
 }
 export const ProductContext = createContext({} as ProductContextType );
 
@@ -28,6 +28,7 @@ export function ProductsContextProvider ({ children }: ProductsContentProvider){
         }
 
         setCart([...cart, newCartProduct]);
+        saveCartStateInStorage();
     }
 
     console.log(cart);
@@ -40,13 +41,31 @@ export function ProductsContextProvider ({ children }: ProductsContentProvider){
         }) as ProductType[];
 
         setCart(updatedCart);
+        saveCartStateInStorage();
     }
+
+    function saveCartStateInStorage(){
+        const storedProductsInCart = JSON.stringify(cart);
+        localStorage.setItem('@coffee-delivery:cart-state-1.0.0', storedProductsInCart);
+    }
+
+    function updateCartFromStorage(){
+        const storedProductsInCart = localStorage.getItem('@coffee-delivery:cart-state-1.0.0');
+        if (storedProductsInCart){
+            setCart(JSON.parse(storedProductsInCart))
+        }   
+    }
+
+    useEffect ( () => {
+        updateCartFromStorage();
+    }, [])
 
     return (
         <ProductContext.Provider value={ {
             cart,
             addItemToCart,
-            removeItemFromCart
+            removeItemFromCart,
+
         } }>
             {children}
         </ProductContext.Provider>
