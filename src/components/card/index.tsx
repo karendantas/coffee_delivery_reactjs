@@ -10,9 +10,11 @@ import { ProductType } from '../../pages/home';
 
 
 interface CardProps {
-    data: ProductType
+    data: ProductType,
+    addItemToCart: (data: ProductType) => void,
+    removeItemFromCart: (productIdToRemove: string) => void,
 }
-export function Card ({data}: CardProps){
+export function Card ({data, addItemToCart, removeItemFromCart}: CardProps){
     return (
         <CardContainer> 
             <ProductContent> 
@@ -33,9 +35,13 @@ export function Card ({data}: CardProps){
 
                 <div className = "add-to-cart" > 
                     <div className = "counter" >
-                        <button> <Minus size={13} weight='bold'/> </button>
+                        <button onClick={() => removeItemFromCart(data.id)}> 
+                            <Minus size={13} weight='bold'/> 
+                        </button>
                             <span> 1 </span>
-                        <button> <Plus size={13} weight='bold'/> </button>
+                        <button onClick={() => addItemToCart(data)}> 
+                            <Plus size={13} weight='bold'/> 
+                        </button>
                     </div>
 
                     <div className="cart">

@@ -15,6 +15,8 @@ import { Card } from '../../components/card';
 const HomeImg = 'HomeImage.png';
 
 import {coffees} from '../../../data.json';
+import { useContext } from 'react';
+import { ProductContext } from '../../contexts/ProductsContext';
 
 export type ProductType = {
     id: string,
@@ -26,7 +28,14 @@ export type ProductType = {
 }
 
 export function Home(){
-    
+    const { addItemToCart, removeItemFromCart } = useContext(ProductContext);    
+
+    function handleAddItemToCart(data: ProductType){
+        addItemToCart(data);
+    }
+    function handleRemoveItemFromCart(productIdToRemove: string){
+        removeItemFromCart(productIdToRemove);
+    }
 
     return (
        <HomeContainer>
@@ -90,7 +99,8 @@ export function Home(){
                         <Card 
                             key = {coffee.id} 
                             data={coffee}
-                        
+                            addItemToCart={ () => handleAddItemToCart(coffee)}
+                            removeItemFromCart={ ()=>  handleRemoveItemFromCart(coffee.id)}
                         />
                     )
                 })}

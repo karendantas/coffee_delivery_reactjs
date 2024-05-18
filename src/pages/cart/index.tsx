@@ -13,6 +13,8 @@ import { AddressFormContainer,
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod';
+import { useContext } from 'react';
+import { ProductContext } from '../../contexts/ProductsContext';
 
 const createNewOrderSchema = z.object({
     zipcode: z.string().min(1, 'Informe seu cep'),
@@ -28,6 +30,7 @@ const createNewOrderSchema = z.object({
 export type createNewOrderData = z.infer<typeof createNewOrderSchema>
 
 export function Cart(){
+    const { cart } = useContext(ProductContext);
 
     const newCartForm = useForm<createNewOrderData>({
         resolver: zodResolver(createNewOrderSchema)
@@ -41,6 +44,7 @@ export function Cart(){
     }
 
     return (
+
         
         <CartContainer>
             <form onSubmit={handleSubmit(handleCreateNewOrder)}> 
@@ -72,46 +76,34 @@ export function Cart(){
                         <h2>Cafés selecionados </h2>
                         <ProductCart> 
                             <ProductsInCartContainer>
-                                <Item>
-                                    <img src="src/assets/products/expresso.png" alt="" />  
-                                    <div>
-                                        <span>Expresso Tradicional</span> 
-                                        <div className = "add-to-cart"> 
-                                            <div className = "content">
-                                                <button type='button'> <Minus size={13} weight='bold'/> </button>
-                                                    <span> 1 </span>
-                                                <button type='button'> <Plus size={13} weight='bold'/> </button>
-                                            </div>
+                                {
+                                    cart.map ( (product) => {
+                                        return (
+                                            <Item>
+                                            <img src= {product.image} alt="" />  
+                                                <div>
+                                                    <span>{product.title}</span> 
+                                                    <div className = "add-to-cart"> 
+                                                        <div className = "content">
+                                                            <button type='button'> <Minus size={13} weight='bold'/> </button>
+                                                                <span> 1 </span>
+                                                            <button type='button'> <Plus size={13} weight='bold'/> </button>
+                                                        </div>
+            
+                                                        <div className="content">
+                                                            <button type='button'> <Trash /> <span>REMOVER</span> </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                            <strong>R$ {product.price}</strong>
+                                            </Item>  
+                                        )
+                                    })
+                                }
 
-                                            <div className="content">
-                                                <button type='button'> <Trash /> <span>REMOVER</span> </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <strong>R$ 9.90</strong>
-                                </Item>
-                                <Item>
-                                    <img src="src/assets/products/expresso.png" alt="" />  
-                                    <div>
-                                        <span>Expresso Tradicional</span> 
-                                        <div className = "add-to-cart"> 
-                                            <div className = "content">
-                                                <button> <Minus size={13} weight='bold'/> </button>
-                                                    <span> 1 </span>
-                                                <button> <Plus size={13} weight='bold'/> </button>
-                                            </div>
-
-                                            <div className="content">
-                                                <button> <Trash /> <span>REMOVER</span> </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <strong>R$ 9.90</strong>
-                                </Item>
-                                
-                            </ProductsInCartContainer>
+                                                  
+                           </ProductsInCartContainer>
 
                             <ProductsPriceContainer>
                                 <div>

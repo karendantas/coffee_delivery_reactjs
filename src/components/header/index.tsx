@@ -11,6 +11,7 @@ interface HeaderProps {
     cartQuantity: number;
 }
 export function Header ({ cartQuantity =2 }:HeaderProps){
+
     return (
         <HeaderContainer>
             <a href="/"><img src={LogoImg} alt="Logo com o nome do site e um icone de copo de cafe roxo ao lado" /></a>

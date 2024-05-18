@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
     width: 100%;
+    max-width: 1120px;
     height: 100vh;
 
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
+
+
 
 `;
 export const IntroContainer = styled.div`
@@ -80,15 +82,14 @@ export const CircleItem = styled.div<CicleItemProps>`
 /*Products styles */
 
 export const ProductsContainer = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap:3.375rem;
-
-    padding: 2rem 3rem;
 `;
 export const ProductsContent = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;

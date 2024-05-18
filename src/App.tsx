@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { DefaultTheme } from './styles/themes/default';
 
 import { Router } from './routes';
+import { ProductsContextProvider } from './contexts/ProductsContext';
 
 
 function App() {
@@ -13,7 +14,9 @@ function App() {
     <ThemeProvider theme={DefaultTheme} >
 
       <BrowserRouter>
-        <Router />
+        <ProductsContextProvider>
+          <Router />
+        </ProductsContextProvider>
       </BrowserRouter>
 
         <GlobalStyle />
